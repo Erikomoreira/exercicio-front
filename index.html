@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD</title>
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar  navbar-light bg-success">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.jfif" width="200" height="100" alt="">
+            </a>
+        </nav>
+    </header>
+
+    <section>
+
+        <form class="mt-5" id="form-RD" method="get">
+
+            <div class="col-md-5 m-auto">
+
+                <div class="form-group required">
+                    <label for="medicoCRM" class="control-label">CRM</label>
+                    <input type="text" class="form-control" id="medicoCRM" name="medicoCRM" required
+                        placeholder="Digite o CRM do médico">
+                </div>
+
+
+                <div class="form-group required">
+
+                    <label for="medicoNome" class="control-label">Nome do Médico</label>
+                    <input type="text" class="form-control" id="medicoNome" name="medicoNome" required
+                        placeholder="Digite o nome do médico">
+                </div>
+
+
+                <div class="form-group required">
+                    <label for="receitaData" class="control-label">Data da Receita</label>
+                    <input type="date" class="form-control" id="receitaData" name="receitaData" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="quantidadeCaixas" class="control-label">Quantidade de Caixas</label>
+                    <input type="number" class="form-control" id="quantidadeCaixas" name="quantidadeCaixas" required
+                        placeholder="Digite a quantidade de caixas">
+                </div>
+
+                <div class="form-group required">
+
+                    <label for="pacienteNome" class="control-label">Nome do Paciente</label>
+                    <input type="text" class="form-control" id="pacienteNome" name="pacienteNome" required
+                        placeholder="Digite o nome do paciente">
+                </div>
+
+
+                <div class="form-group required">
+                    <label for="pacienteCPF" class="control-label">CPF do Paciente</label>
+                    <input type="text" class="form-control" id="pacienteCPF" name="pacienteCPF" required
+                        placeholder="Digite o CPF do paciente">
+                </div>
+
+                <div class="form-group required">
+                    <label for="nascimentoData" class="control-label">Data de Nascimento do Paciente</label>
+                    <input type="date" class="form-control" id="nascimentoData" name="nascimentoData" required>
+                </div>
+
+                <div class="form-group required">
+                    <label class="col-sm-2 control-label">Sexo</label>
+                    <div class="col-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="sexo" id="feminino" value="FEMININO"> Feminino
+                        </label>
+
+                        <label class="radio-inline ml-3">
+                            <input type="radio" name="sexo" id="masculino" value="MASCULINO"> Masculino
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="form-group required">
+                    <label for="pacienteCPF" class="control-label">Tipo de Envio</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Anexar Arquivo</option>
+                        <option>WhatsApp</option>
+                        <option>E-mail</option>
+                    </select>
+                </div>
+
+
+                <p class="control-label-p">Campos obrigatórios</p>
+
+                <div class="text-center">
+                    <button id="enviarContato" type="submit" class="btn btn-success">Enviar</button>
+                    <button type="reset" class="btn btn-danger">Limpar</button>
+                </div>
+
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <div id="enviarFormulario" data-backdrop="static" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deseja realmente enviar o formulário?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Caso tenha digitado algo errado clique em cancelar</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button id="closeModal" type="button" class="btn btn-success" data-dismiss="modal">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script src="javascript/script.js"></script>
+
+</body>
+
+</html>
